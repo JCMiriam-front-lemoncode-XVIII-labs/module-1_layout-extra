@@ -1,0 +1,29 @@
+@use "variables";
+
+/* At 768px and below, navigation becomes a sticky horizontal row. */
+@media (max-width: variables.$breakpoint-tablet) {
+  .toolbar, .menu-title { display: none; }
+  .page-container { display: flex; flex-direction: column; }
+  nav { position: sticky; top: 0; z-index: 1; padding: 8px; }
+  .menu-container { position: static; }
+  nav ul { padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  nav li + li { margin-top: 0; }
+  nav a { padding: 10px 2px; text-align: center; background: #35483b; }
+  main { flex: 1; padding: 16px 12px; }
+  .list { flex-direction: column; gap: 12px; }
+  .card {
+    flex: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+    min-height: 132px;
+    border: 1px solid #e0e6e1;
+    border-radius: 12px;
+    text-align: left;
+  }
+  #miembros { scroll-margin-top: 60px; }
+}
+@media (max-width: variables.$breakpoint-small) {
+  nav ul { gap: 8px; }
+  .card { padding: 12px; gap: 12px; }
+}

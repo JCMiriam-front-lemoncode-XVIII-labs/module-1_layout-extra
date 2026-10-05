@@ -1,0 +1,17 @@
+@use "variables";
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: variables.$color-text;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+}
+h1, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; }
+input { font: inherit; }
+a:focus-visible, input:focus-visible {
+  outline: 3px solid #587100;
+  outline-offset: 3px;
+}
